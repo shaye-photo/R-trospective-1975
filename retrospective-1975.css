@@ -1,0 +1,102 @@
+.container {
+    width: 100%; /* S'assure que le conteneur occupe toute la largeur */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    column-count: 3; /* Trois colonnes par défaut */
+    column-gap: 25px; /* Espace entre les colonnes */
+}
+
+h1 {
+    text-align: left;
+    margin-bottom: 0; /* Suppression de l'espace en dessous de h1 */
+    color: #2c3e50;
+    position: relative; /* Position relative pour le h1 */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    break-inside: avoid; /* Évite que le titre soit coupé entre les colonnes */
+}
+
+h2, h3, h4 {
+    text-align: left;
+    margin-top: 25px; /* Espace au-dessus */
+    margin-bottom: 5px; /* Réduit l'écart entre le titre et le texte suivant */
+    color: #2980b9; /* Couleur */
+    position: relative; /* Position relative*/
+    break-inside: avoid; /* Évite que le titre soit coupé entre les colonnes */
+}
+
+h2 {
+    position: relative; /* Position relative pour le h2 */
+    display: block; /* S'assure qu'il occupe toute la largeur */
+    padding-bottom: 5px; /* Espace entre le texte et la ligne */
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Ligne sur toute la largeur */
+    height: 4px; /* Épaisseur de la ligne */
+    background-color: rgb(128, 12, 12); /* Couleur de la ligne */
+}
+
+h3 {
+    margin-top: 5px; /* Espace au-dessus */
+    margin-bottom: 3px; /* Réduit l'écart entre le titre et le texte suivant */
+    color: #3498db; /* Couleur pour h3 */
+}
+
+p {
+    margin-top: 0; /* Supprime l'espace au-dessus du paragraphe */
+    margin-bottom: 2px; /* Espace vertical entre les paragraphes */
+    margin-left: 0px; /* Supprime le retrait à gauche */
+    text-align: justify; /* Justifie le texte des paragraphes */
+}
+
+ul {
+    list-style-type: disc; /* Style de la liste */
+    margin-left: -40px; /* Espace à gauche pour les listes */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: justify; /* Justifie le texte des paragraphes */
+}
+
+li {
+    margin-bottom: 3px; /* Espace entre les éléments de liste */
+    margin-left: 40px;
+    text-align: justify; /* Justifie le texte des paragraphes */
+}
+
+img {
+    width: 100%; /* L'image prend toute la largeur de son conteneur */
+    height: auto; /* Conserve le ratio d'aspect de l'image */
+    display: block; /* Évite les espaces blancs en dessous des images */
+    margin: 0 auto; /* Centre l'image si nécessaire */
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.highlight {
+    color: #c81a1a;
+     font-weight: bold; /* Gras */
+ }
+ 
+/* Media queries pour ajuster le nombre de colonnes */
+@media (max-width: 1250px) {
+    body {
+        column-count: 2; /* Deux colonnes quand la largeur est inférieure à 1250px */
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        column-count: 1; /* Une colonne quand la largeur est inférieure à 800px */
+    }
+}
